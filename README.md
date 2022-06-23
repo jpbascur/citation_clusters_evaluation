@@ -1,5 +1,5 @@
 # citation_clusters_evaluation/n
-Code of the paper Academic information retrieval using citation clusters: In-depth evaluation based on systematic reviews/n
+Code of the paper Academic information retrieval using citation clusters: In-depth evaluation based on systematic reviews\n
 
 Warning:/n
 For legal reasons, we do not provide the data that this code used./n
