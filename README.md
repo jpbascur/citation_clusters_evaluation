@@ -1,8 +1,8 @@
-# citation_clusters_evaluation
-Code of the paper Academic information retrieval using citation clusters: In-depth evaluation based on systematic reviews
+# citation_clusters_evaluation/n
+Code of the paper Academic information retrieval using citation clusters: In-depth evaluation based on systematic reviews/n
 
-Warning:
-For legal reasons, we do not provide the data that this code used.
+Warning:/n
+For legal reasons, we do not provide the data that this code used./n
 
 Content:
 The .py files are modules that the .pynb files call, and the .pynb what is run.
