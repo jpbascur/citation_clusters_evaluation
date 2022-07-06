@@ -1,21 +1,19 @@
 # citation_clusters_evaluation
 
-Code of the paper Academic information retrieval using citation clusters: In-depth evaluation based on systematic reviews.
+This repository contains the code of the paper 'Academic information retrieval using citation clusters: In-depth evaluation based on systematic reviews' by Juan Pablo Bascur, Suzan Verberne, Nees Jan van Eck, and Ludo Waltman.
 
-# Warning:
+## Content
 
-For legal reasons, we do not provide the data that this code used.
+The repository consists of four Jupyter notebooks (`.ipynb` files) and the Python modules (`.py` files) used by the notebooks. The order to run the notebooks is as follows:
 
-# Content:
+1. `clean_references.ipynb`: This notebook removes the relevant documents of the systematic reviews. It requires the PubMed version of the Boolean queries and the citation networks. It removes documents that are not retrieved by the Boolean queries or that are not present in the citation networks. After this process, it also removes the systematic reviews that have too few relevant documents left. This is an important step, because the relevant documents indicate which clusters will get child clusters.
 
-The .py files are modules that the .pynb files call, and the .pynb what is run.
+2. `clustering.ipynb`: This notebook creates the tree hierarchy of clusters for the citation networks. It requires the citation networks and the relevant documents of the systematic reviews. The clustering is performed on an [igraph](https://igraph.org) object. An extensive part of the code (within the `.py` files) is for merging the clusters. The code keeps track of the resolution parameter at each level. The creation of child clusters is a recursive process, and it stops after 13 iterations or if there are no relevant documents in the parent cluster.
 
-The order to run the .pynb files is:
+3. `results.ipynb`: This notebook creates the results for the paper. It requires the clustering results and the relevant documents of the systematic reviews. It calculates the metrics of each systematic review for the different beta values. It also obtains the title of the documents from the PubMed API and extracts the noun phrases from the titles. It has a stop and continue catcher on one of the PubMed API requests since the connection can be lost due to requesting too many titles.
 
-1- clean_references.pynb: This file remove the relevant documents of the systematic reviews. It requires the PubMed version of the Boolean queries and the citation networks. It removes documents that are not retrieved by the Boolean queries or are not present in the citation networks. After this process, it also removes the systematic reviews that have too few relevant documents left. This is the first step because the relevant documents indicate which clusters will get child clusters.
+4. `create_data.ipynb`: This notebook generates the data for the Zenodo repository.
 
-2- clustering.pynb: This file create the tree hierarchy of clusters for the citation networks. It requires the citation networks and the relevant documents of the systematic reviews. The clustering is performed on an igraph object. An extensive part of the code (within the .py files) is for merging the clusters. The code keeps track of the resolution parameter at each level. The creation of child clusters is a recursive process, and it stops on the 13th iteration or if there are no relevant documents in the parent cluster.
+## Disclaimer
 
-3- results.pynb: This files create the results of the paper. It requires the clustering results and the relevant documents of the systematic reviews. It calculates the metrics of each systematic review at the different beta values. It also obtains the title of the documents from the PubMed API and extracts the noun phrases from the titles. It has a stop and continue catcher on one of the PubMed API request because the connection was lost due to requesting too many titles.
-
-4- create_data.pynb: This file generate the data available at the Zenodo repository.
+Due to license restrictions, this repository does not contain the data that was used to run the code.
