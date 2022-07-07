@@ -16,4 +16,4 @@ The repository consists of four Jupyter notebooks (`.ipynb` files) and the Pytho
 
 ## Disclaimer
 
-Due to license restrictions, this repository does not contain the data that was used to run the code.
+Due to license restrictions, this repository does not contain the data that was used to run the code. This data partially is available in a Zenodo repository (https://www.doi.org/10.5281/zenodo.6702252).
